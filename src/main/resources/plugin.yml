@@ -1,0 +1,11 @@
+name: NapThePayViet
+version: ${project.version}
+main: me.takahatashun.payviet.Main
+prefix: NapThe
+authors: [TakahataShun]
+description: Nạp thẻ Payviet.net
+website: https://payviet.net
+commands:
+  napthe:
+    description: /napthe
+    default: true
