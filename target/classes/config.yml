@@ -1,0 +1,72 @@
+####################
+#                  #
+#     /$$$$$$$     #
+#    | $$__  $$    #
+#    | $$  \ $$    #
+#    | $$$$$$$/    #
+#    | $$____/     #
+#    | $$          #
+#    | $$          #
+#    |__/          #
+#                  #
+####################
+Version: 1.3 # Không đổi giá trị này!
+Settings:
+  Locale: 'VN'
+PayViet: # Lưu ý: Phần này là config bắt buộc, nếu không config thì plugin sẽ không chạy
+  Token: '' # Token PayViet của bạn (Có thể nhận Token qua email)
+  Merchant_ID: '' # Merchant ID của bạn
+  Secret_Key: '' # Secret Key của bạn
+  # Lưu ý 2: Trang thái API PayViet trên tài khoản của bạn phải là Active mới có thể dùng
+Card:
+  # Config mẫu:
+  #  10000:
+  #    - 'player:me vừa nạp 10.000 đồng cho server' #Chạy command dưới dạng người chơi
+  #    - 'op:p give {player} 10' #Chạy command dưới dạng người chơi được op
+  #    - 'op:eco give {player} 10000' #Như trên
+  #    - 'console:bc {player} vừa nạp 10.000 đồng' #Chạy command trên console
+  # Ngoài ra còn có placeholder bổ trợ khuyến mãi như: {bonus:<giá trị>:<phần trăm tặng thêm>}
+  #   Trong đó:
+  #    <giá trị> là phần giá trị ban đầu mà bạn cần tính
+  #    <phần trăm tặng thêm> là số phần trăm bạn muốn tặng thêm cho player
+  #   Ví dụ:
+  #     {bonus:100:10} tức là tặng thêm 10% của 100, kết quả: 110
+  #     Config mẫu: #Nạp 100k sẽ khuyến mãi thêm 50%
+  #       100000:
+  #         - 'op:p give {player} {bonus:1000:50}'
+  10000:
+    - 'console:p give {player} 10'
+    - 'console:eco give {player} 10000'
+    - 'console:bc {player} vừa nạp 10.000 đồng'
+  20000:
+    - 'console:p give {player} 20'
+    - 'console:eco give {player} 20000'
+    - 'console:bc {player} vừa nạp 20.000 đồng'
+  30000:
+    - 'console:p give {player} 30'
+    - 'console:eco give {player} 30000'
+    - 'console:bc {player} vừa nạp 30.000 đồng'
+  50000:
+    - 'console:p give {player} 50'
+    - 'console:eco give {player} 50000'
+    - 'console:bc {player} vừa nạp 50.000 đồng'
+  100000:
+    - 'console:p give {player} 100'
+    - 'console:eco give {player} 100000'
+    - 'console:bc {player} vừa nạp 100.000 đồng'
+  200000:
+    - 'console:p give {player} 200'
+    - 'console:eco give {player} 200000'
+    - 'console:bc {player} vừa nạp 200.000 đồng'
+  300000:
+    - 'console:p give {player} 300'
+    - 'console:eco give {player} 300000'
+    - 'console:bc {player} vừa nạp 300.000 đồng'
+  500000:
+    - 'console:p give {player} 500'
+    - 'console:eco give {player} 500000'
+    - 'console:bc {player} vừa nạp 500.000 đồng'
+  1000000:
+    - 'console:p give {player} 1000'
+    - 'console:eco give {player} 1000000'
+    - 'console:bc {player} vừa nạp 1.000.000 đồng'
