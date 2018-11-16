@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 import static me.takahatashun.Library.Chat.ChatAPI.translateColorCode;
+import static me.takahatashun.Library.Chat.ChatAPI.upperCaseFirstLetter;
 import static me.takahatashun.payviet.Listener.AsyncPlayerChat.*;
 import static me.takahatashun.payviet.Main.instance;
 import static me.takahatashun.payviet.Main.version;
@@ -26,7 +27,7 @@ public class Commands implements CommandExecutor {
             Player p = (Player) sender;
             if (args.length == 0 || (args.length == 1 && args[0].equalsIgnoreCase("choose"))) {
                 for(String Card : cardList) {
-                    String cardType = Card.split(":")[0];
+                    String cardType = upperCaseFirstLetter(Card.split(":")[0]);
                     String text = translateColorCode(YAML.getMessage().getString("ChatGui.CardType.Text").replaceAll("(?ium)\\{Card_Type\\}",cardType));
                     List<String> hovers = YAML.getMessage().getStringList("ChatGui.CardType.Hover");
                     StringBuilder hover = new StringBuilder();
@@ -89,7 +90,7 @@ public class Commands implements CommandExecutor {
                 if(args[0].equalsIgnoreCase("choose")) {
                     if(cardNameList.contains(args[1])) {
                         for (String Card : cardList) {
-                            String cardType = Card.split(":", 2)[0];
+                            String cardType = upperCaseFirstLetter(Card.split(":", 2)[0]);
                             if (args[1].equalsIgnoreCase(cardType)) {
                                 for (int cardAmount : amountList) {
                                     String text = translateColorCode(

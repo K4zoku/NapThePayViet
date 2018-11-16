@@ -49,13 +49,13 @@ public class Main extends JavaPlugin {
             ccs.sendMessage(prefix+"§cInvalid configuration version, disabling...");
             pm.disablePlugin(this);
         } else {
-            ccs.sendMessage(prefix+"§aConfig ok!");
-        }
-        if(((token.isEmpty()) && (merchantID.isEmpty()) && (secretKey.isEmpty()))){
-            ccs.sendMessage(prefix+"§cPayViet info is not config, disabling...");
-            pm.disablePlugin(this);
-        } else {
-            ccs.sendMessage(prefix+"§aNapThePayViet has been enabled!");
+            if (((token.isEmpty()) && (merchantID.isEmpty()) && (secretKey.isEmpty()))) {
+                ccs.sendMessage(prefix + "§cPayViet info is not config, disabling...");
+                pm.disablePlugin(this);
+            } else {
+                ccs.sendMessage(prefix + "§aConfig ok!");
+                ccs.sendMessage(prefix + "§aNapThePayViet has been enabled!");
+            }
         }
         card = getCard();
         getScheduler().scheduleSyncRepeatingTask(this,new BukkitRunnable() {
@@ -63,7 +63,7 @@ public class Main extends JavaPlugin {
             public void run() {
                 card = getCard();
             }
-        },0,20*60*5);
+        }, 0, 20 * 60 * 5); // 5 minutes
     }
 
     @Override
